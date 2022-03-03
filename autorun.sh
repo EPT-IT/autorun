@@ -12,10 +12,10 @@ echo -n Please input the UID:
 read inputuid
  
 # Add user with flags and variables
-sudo useradd --create-home --user-group --groups adm,cdrom,sudo,dip,plugdev,lpadmin,lxd,sambashare --uid $inputuid --password password --comment "$inputfullname" $inputusername
+sudo useradd --create-home --user-group --groups adm,cdrom,sudo,dip,plugdev,lpadmin,lxd,sambashare --uid $inputuid --comment "$inputfullname" $inputusername
 
 # Set password
-Sudo psswd $inputusername
+sudo psswd $inputusername
 
 # Update
 sudo apt update
