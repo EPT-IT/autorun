@@ -11,42 +11,42 @@ CYAN='\033[36m'
 WHITE='\033[37m'
 NC='\033[0m' # No Color
 
-#The line bellow shows colors, comment out once done
-echo ${BLACK}BLACK ${RED}RED ${GREEN}GREEN ${ORANGE}ORANGE ${BLUE}BLUE ${PURPLE}PURPLE ${CYAN}CYAN ${WHITE}WHITE ${NC}NC
+#The line bellow shows colors
+#echo ${BLACK}BLACK ${RED}RED ${GREEN}GREEN ${ORANGE}ORANGE ${BLUE}BLUE ${PURPLE}PURPLE ${CYAN}CYAN ${WHITE}WHITE ${NC}NC
 
 
 
 
 # Ask the user for their username
-echo ${CYAN}Please input a Username:${NC}
+echo -e ${CYAN}Please input a Username:${NC}
 read inputusername
 username=$(echo $inputusername | tr '[:upper:]' '[:lower:]')
-echo ${ORANGE}Username has been set to ${GREEN}$username
+echo -e ${ORANGE}Username has been set to ${GREEN}$username
 echo ""
 
 # Ask the user for their name
-echo ${CYAN}Please input their full name:${NC}
+echo -e ${CYAN}Please input their full name:${NC}
 read inputfullname
-echo ${ORANGE}Full name is ${GREEN}$inputfullname
+echo -e ${ORANGE}Full name is ${GREEN}$inputfullname
 echo ""
 
 # Ask the user for their uid
-echo -n ${CYAN}Please input the UID:${NC}
+echo -e -n ${CYAN}Please input the UID:${NC}
 read inputuid
 if [[ $inputuid =~ ^[[:digit:]]+$ ]];then
-echo ${ORANGE}The UID is ${GREEN}$inputuid ${NC}
+echo -e ${ORANGE}The UID is ${GREEN}$inputuid ${NC}
 else
-echo ${RED}No or invalid UID has been selected, UID had been skipped.${NC}
+echo -e ${RED}No or invalid UID has been selected, UID had been skipped.${NC}
 fi
 echo ""
 
 # Add user with flags based on input
 if [[ $inputuid =~ ^[[:digit:]]+$ ]];then
 sudo useradd --create-home --user-group --groups adm,cdrom,sudo,dip,plugdev,lpadmin,lxd,sambashare --uid $inputuid --comment "$inputfullname" $username
-echo ${ORANGE}User ${GREEN}$username ${ORANGE}has been created for ${GREEN}$inputfullname ${ORANGE}with the UID ${GREEN}$inputuid${NC}
+echo -e ${ORANGE}User ${GREEN}$username ${ORANGE}has been created for ${GREEN}$inputfullname ${ORANGE}with the UID ${GREEN}$inputuid${NC}
 else
 sudo useradd --create-home --user-group --groups adm,cdrom,sudo,dip,plugdev,lpadmin,lxd,sambashare --comment "$inputfullname" $username
-echo ${ORANGE}User ${GREEN}$username ${ORANGE}has been created for ${GREEN}$inputfullname ${ORANGE}without any ${RED}UID${NC}
+echo -e ${ORANGE}User ${GREEN}$username ${ORANGE}has been created for ${GREEN}$inputfullname ${ORANGE}without any ${RED}UID${NC}
 fi
 
 
