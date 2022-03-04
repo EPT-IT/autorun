@@ -1,3 +1,4 @@
+#!/bin/bash
 #This is a script to automate the process of creating a user with the correct flags for NTNU
 
 #This adds colors to the script
@@ -59,5 +60,5 @@ sudo apt install net-tools
 sudo apt install htop
 sudo apt install gparted
 sudo apt install neofetch
-
+# Upgrade
 sudo apt upgrade
