@@ -15,8 +15,6 @@ NC='\033[0m' # No Color
 #echo ${BLACK}BLACK ${RED}RED ${GREEN}GREEN ${ORANGE}ORANGE ${BLUE}BLUE ${PURPLE}PURPLE ${CYAN}CYAN ${WHITE}WHITE ${NC}NC
 
 
-exec < /dev/tty
-
 # Ask the user for their username
 echo -e ${CYAN}Please input a Username:${NC}
 read inputusername
