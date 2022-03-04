@@ -37,7 +37,7 @@ read inputuid
 if [[ $inputuid =~ ^[[:digit:]]+$ ]];then
 echo -e ${ORANGE}The UID is ${GREEN}$inputuid ${NC}
 else
-echo -e ${RED}No or invalid UID has been selected, UID had been skipped.${NC}
+echo -e ${RED}No or invalid UID has been selected, UID has been skipped.${NC}
 fi
 echo ""
 
