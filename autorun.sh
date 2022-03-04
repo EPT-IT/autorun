@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #This is a script to automate the process of creating a user with the correct flags for NTNU
 
 #This adds colors to the script
